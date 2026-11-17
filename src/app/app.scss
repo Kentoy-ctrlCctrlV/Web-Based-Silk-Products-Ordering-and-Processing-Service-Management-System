@@ -1,0 +1,254 @@
+﻿:host {
+  display: block;
+  min-height: 100vh;
+  background: #f5f0e6;
+  color: #1d2c22;
+  font-family: Inter, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f0e6;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.76);
+  border-bottom: 1px solid rgba(43, 82, 62, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-mark {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.7rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #244f3a, #6d8d3b);
+  color: white;
+  font-weight: 800;
+}
+
+.brand-block strong,
+.brand-block span {
+  display: block;
+}
+
+.brand-block strong {
+  font-size: 1.15rem;
+}
+
+.brand-block span {
+  font-size: 0.7rem;
+  color: #5b6b5d;
+}
+
+.main-nav,
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.main-nav a,
+.user-actions a,
+.user-actions span {
+  font-size: 0.95rem;
+}
+
+.main-nav a,
+.user-actions a {
+  text-decoration: none;
+  color: #214c39;
+  font-weight: 600;
+}
+
+.main-nav a.active {
+  color: #183d2c;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  flex: 1;
+  padding: 1.5rem 0 2rem;
+}
+
+.site-footer {
+  padding: 1rem 2rem 1.3rem;
+  text-align: center;
+  color: #53655a;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(43, 82, 62, 0.08);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.page-header,
+.section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4d6d58;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2vw, 2.3rem);
+  margin-bottom: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #224f3c, #446a52);
+  color: white;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(43, 82, 62, 0.15);
+  color: #214c39;
+}
+
+.full {
+  width: 100%;
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(50, 82, 60, 0.12);
+  border-radius: 18px;
+  padding: 1.2rem;
+  color: #4c6752;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(44, 78, 60, 0.1);
+  border-radius: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(62, 86, 70, 0.08);
+}
+
+th {
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #51675d;
+  background: rgba(238, 246, 240, 0.9);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: #edf5ee;
+  color: #1d6a43;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    flex-wrap: wrap;
+    padding: 1rem 1rem 0.8rem;
+  }
+
+  .main-nav,
+  .user-actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .page-shell {
+    width: min(100% - 1rem, 1180px);
+  }
+
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

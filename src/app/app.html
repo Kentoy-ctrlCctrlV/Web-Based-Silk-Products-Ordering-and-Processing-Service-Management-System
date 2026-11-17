@@ -1,0 +1,38 @@
+﻿<div class="app-shell">
+  <header class="topbar">
+    <div class="brand-block">
+      <div class="brand-mark">S</div>
+      <div>
+        <strong>SilkMart</strong>
+        <span>AI-ready silk operations prototype</span>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
+      <a *ngIf="isCustomer" routerLink="/customer" routerLinkActive="active">Customer</a>
+      <a *ngIf="isStaff || isAdmin" routerLink="/staff" routerLinkActive="active">Staff</a>
+      <a *ngIf="isAdmin" routerLink="/staff/catalog" routerLinkActive="active">Catalog admin</a>
+      <a *ngIf="!currentUser" routerLink="/login" routerLinkActive="active">Sign in</a>
+    </nav>
+
+    <div class="user-actions">
+      <ng-container *ngIf="currentUser; else guestLink">
+        <span>Welcome, {{ currentUser.name }}</span>
+        <button type="button" class="btn btn-secondary" (click)="signOut()">Sign out</button>
+      </ng-container>
+      <ng-template #guestLink>
+        <a class="btn btn-primary" routerLink="/login">Access portal</a>
+      </ng-template>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <router-outlet />
+  </main>
+
+  <footer class="site-footer">
+    <span>Operational prototype only • PTRI authorization, security review, and policy approval are required before production launch.</span>
+  </footer>
+</div>
